@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
 		var value = $( "#searchthis" ).val(); //fetches what the user is typing in the input box
 		var length = $( "#searchthis" ).val().length; //counts characters currently in input box
 
-		if (length > 1) { //if input box has more that 2 characters
+		if (length > 1) { //if input box has more than 1 character
     		$( ".searchitem:contains('" + value + "')").show(); //show results, activates the class that relates to what the user searches for
     	}
 
