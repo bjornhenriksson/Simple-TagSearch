@@ -3,6 +3,8 @@ Simple-TagSearch
 
 Search functions and scripts tends to be over complicated. My short and functional live TagSearch script let's you add multiple tags and styles and is only 19 lines of code.
 
+[DEMO](https://www.bjornhenriksson.se/search)
+
 !No need for jQuery UI (sweeeeeeeet!)<br />
 !Requires jQuery
 
