@@ -6,6 +6,9 @@ Search functions and scripts tends to be over complicated. My short and function
 !No nead for jQuery UI (sweeeeeeeet!)<br />
 !Requires jQuery
 
+No need for JSON files or databases. All your search tags and results go on page(also let's google index them all).
+Don't worry it hides all the results until the users searches for something that excists in a link and then shows that one.
+
 How to use: 
 
 Add your search box with id #searchthis
