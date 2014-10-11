@@ -1,24 +1,28 @@
-jQuery(document).ready(function ($) {
+(function ($) {
+    $.fn.tagsearch = function (options) {
+        var settings = $.extend({
+            'item_selector': '.searchitem',
+            'tag_selector': 'span'
+        }, options);
+        var search = this;
+        var items = $(settings.item_selector);
 
-	$( ".searchitem" ).hide(); //this hides all items in list on page load
-	$( ".searchitem span" ).hide(); //hides all the search tags in your <span> tag
+        // Hide items and tags
+        $(settings.item_selector + ', ' + settings.tag_selector).hide();
 
-	$("#searchthis").on("keyup", function(e) { //activates if user types in the input box
+        search.on("keyup", function(e) {
+            var value = search.val().toLowerCase();
+            var length = value.length;
+            var query = ":contains('" + value + "')";
 
-		var value = $( "#searchthis" ).val(); //fetches what the user is typing in the input box
-		var length = $( "#searchthis" ).val().length; //counts characters currently in input box
+            if (length) {
+                $(items.filter(query)).show();
+                $(items.filter(':not(' + query + ')')).hide();
+            } else {
+                items.hide();
+            }
+        });
 
-		if (length > 1) { //if input box has more than 1 character
-    		$( ".searchitem:contains('" + value + "')").show(); //show results, activates the class that relates to what the user searches for
-    	}
-
-    	if(e.keyCode == 8) {
-    		$( ".searchitem" ).hide(); //hides results if backspace is pressed
-    	}
-
-    	if(e.keyCode == 16) { //ignores shift key
-    		return;
-    	}
-	});	
-
-}); 
+        return this;
+    };
+}(jQuery));
