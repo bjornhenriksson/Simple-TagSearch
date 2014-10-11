@@ -27,10 +27,22 @@ Add search terms
 </a>
 ```
 
-Add one line of JavaScript:
+Add one line of JavaScript
 
 ```javascript
 $(function () {
     $('#searchthis').tagsearch();
+});
+```
+
+Options
+-------
+
+Pass options to `tagsearch` like this
+
+```javascript
+$('#search').tagsearch({
+    'item_selector': '.terms > li',
+    'tag_selector': '.terms .tag'
 });
 ```
